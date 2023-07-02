@@ -1,0 +1,51 @@
+{ //configure clang format
+    "clang-format.executable": "/usr/bin/clang-format",
+    "clang-format.executable.linux": "clang-format",
+    "clang-format.style": "google",
+    "clang-format.language.cpp.enable": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    //configure cmake
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.copyCompileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "cmake.configureOnOpen": false,
+    //configure clangd
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build"
+    ],
+    // configure clang-tidy
+    "clang-tidy.compilerArgs": [
+        "--config=${workspaceFolder}/.vscode/clangd-config.json"
+    ],
+    // auto format on save
+    "editor.formatOnSave": true,
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+    "editor.formatOnPaste": false,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    //configure python settings
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "isort.args": [
+        "--profile=black"
+    ],
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": true,
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    }
+}
